@@ -1,0 +1,55 @@
+<div class="container">
+  <%= link_to "← 戻る",:back %>
+</div>
+
+
+<div class="RoomForm">
+ <% if  @room.image?%>
+<%= image_tag @room.image.url ,class:"RoomDetails__image"%>
+<% else %>
+  <p><%= image_tag 'https://rails-02-sample.herokuapp.com/assets/room/default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png',class: "icon", style: "width: 100px; height: 100px; object-fit:cover;" %></p>
+ <% end %>
+
+<div class="RoomFormBody">
+
+    <div class="RoomFormBody">
+        <p class="RoomDetails__name"><%= @room.name %></p>
+        <p class="RoomDetails__price"><%= @room.price %></p>
+  
+        <p class="RoomDetails__address"><%= @room.address %></p>
+        <p class="RoomDetails__content"><%= @room.introduction %></p>
+    </div> 
+
+    <div class="ReservationForm">
+ 
+    <%= form_with model:@reservation, url:confirm_reservation_path , local: true do |f| %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+
+      <div class="ReservationForm__input">
+        <%= f.label :check_in, "チェックイン" %>
+        <%= f.date_field :check_in%>
+      </div>
+
+      <div class="ReservationForm__input">
+        <%= f.label :check_out, "チェックアウト" %>
+        <%= f.date_field :check_out%>
+      </div>
+
+      <div class="ReservationForm__input">
+        <%= f.label :count_people, "人数" %>
+        <%= f.number_field :count_people, placeholder:"0"%>
+      </div>
+
+      </div>
+
+       <% if user_signed_in? %>
+       <%= f.hidden_field :user_id, value: current_user.id %>
+       <%= f.submit:予約する ,class:"btn ReservationForm_btn" %>
+       <% else %>
+       <%= link_to "ログイン", new_user_session_path, type: "button",class:"btn ReservationForm_btn" %>
+   <%end%>
+
+
+
+      </div>
+      <% end %>

@@ -1,0 +1,45 @@
+<h2>新規登録</h2>
+<%=alert %>
+<div class="form-container">
+<%= form_with model: @room do |f| %>
+
+    <div class="form">
+    <%= f.label :name ,"施設名" %>
+    <div class="form_btn">
+    <%= f.text_field :name ,class:"form-control" ,id:"name",placeholder:"ルーム名を入力",  size: 50 %>
+    </div>
+
+    <div class="form_btn">
+    <%= f.label :introduction,"施設詳細" %>
+    <div class="form_btn">
+    <%= f.text_area :introduction ,class:"form-control" ,id:"introduction",placeholder:"施設詳細を入力", size: "50x5"  %>
+    </div>
+
+    <div class="form_btn">
+    <%= f.label :price ,"料金" %>
+    <div class="form_btn">
+    <%= f.number_field :price ,class:"form-control" ,id:"price",placeholder:"料金を入力", size: 50 %>
+    </div>
+
+
+    <div class="form_btn">
+    <%= f.label :address, "住所" %>
+    <div class="form_btn">
+    <%= f.text_field :address ,class:"form-control" ,id:"address",placeholder:"住所を入力",  size: 50 %>
+    </div>
+
+
+    <div class="iamge_form">
+    <%= f.label :image, "施設画像" %>
+    <%= f.file_field :image,class:"form-control" ,id:"image"%>
+
+    <div class="form_btn">
+    <%= f.submit "保存" ,class:"btn"%>
+   
+    </div>
+<% end %>
+
+
+
+
+
