@@ -10,11 +10,11 @@ ja:
     errors:
       models:
         reservation:
-           check_in:チェックイン
-        check_out:チェックアウト
-        count_people:人数
+          check_in:チェックイン
+          check_out:チェックアウト
+         count_people:人数
       messages:
-          record_invalid: 'バリデーションに失敗しました: %{errors}'
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
@@ -139,9 +139,9 @@ ja:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"
   attributes:
-      check_in:チェックイン
-      check_out:チェックアウト
-      count_people:人数
+        check_in:チェックイン
+        check_out:チェックアウト
+        count_people:人数
   helpers:
     select:
       prompt: 選択してください

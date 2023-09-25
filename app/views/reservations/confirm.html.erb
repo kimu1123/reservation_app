@@ -10,12 +10,10 @@
             <%= f.hidden_field :count_people ,value: @reservation.count_people%>
 
 
-
-
-            <div class="ReservationConfirm>
-                <p class="ReservationConfirm__label"><%= f.label :check_in, "チェックイン" %></p>
-                <p class="ReservationConfirm__value"><%= @reservation.check_in.strftime("%Y/%m/%d") %></p>
-            </div>
+            <tr>
+            <th>チェックイン</th>
+            <td class="is-right"><%= @reservation.check_in.strftime("%Y/%m/%d") %></td>
+            </tr>
 
             <div class="ReservationConfirm>
             <p>チェックアウト</p>
@@ -35,7 +33,7 @@
 
            <div class="ReservationConfirm>
            <p class="ReservationConfirm__label">お支払い金額</p>
-           <p class="ReservationConfirm__value ReservationConfirm__value--price">¥<%= @total_price  %></p>
+           <p class="ReservationConfirm__value ReservationConfirm__value--price">¥<%= @total_price %></p>
           </div>
 
           <div class= "submit is-fullwidth">

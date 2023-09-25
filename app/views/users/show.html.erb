@@ -1,7 +1,41 @@
-<h1>アカウント情報</h1>
+<section class="container UserSection">
+    <h2>設定</h2>
+  
+    <h3>プロフィール</h3>
+    <div class="UserContainer">
 
 
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
-<p>パスワード : *********</p>
+    <div class="UserContainer">
+    <ul class="SideNavigation">
+        <li class="SideNavigation__item active"><%= link_to "アカウント",edit_user_registration_path(current_user) %>  </li>
+        <li class="SideNavigation__item "><%= link_to "プロフィール", user_path(current_user) %> </li>
+    </ul>
+    </div>
+
+   
+      <div>
+         <label class="AccountInformation__label" for="icon">アイコン画像</label>
+          <% if @user.icon? %>
+            <%= image_tag @user.icon.url, class: "user-icon FileUploadArea__image" %>
+          <% else %>
+            <p><%= image_tag 'https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png',class: "icon", style: "border-radius: 30%; width: 50px; height: 50px; object-fit:cover;" %></p>
+          <% end %>
+     </div>
+
+     <table>
+       <tr>
+         <th>名前</th>
+           <td><%= @user.name %></td>
+       </tr>
+       <tr>
+          <th>自己紹介</th>
+           <td><%= @user.profile%></td>
+       </tr>
+    </table>
+
+    <div>
+      <ul>
+       <li><%= link_to "編集", edit_user_path(current_user), class: "button_edit" %></li>
+      </ul>
+    </div>
+    

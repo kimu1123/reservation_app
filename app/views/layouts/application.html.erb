@@ -16,7 +16,7 @@
       <% if user_signed_in? %>
         <h2> 現在 <%= current_user.name %> さんがログインしています </h2>
 
-        <%= link_to 'プロフィール変更', edit_user_registration_path %>
+        <%= link_to 'アカウント設定', users_show_path  %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to 'サインアップ', new_user_registration_path %>

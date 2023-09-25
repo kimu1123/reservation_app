@@ -8,3 +8,22 @@
     left: 50px;
     width: 100px;
 } 
+
+
+th[scope='col'] {
+    position: relative;
+    left: -70px;
+}
+
+table td {
+    background-color: #f9ecd5;
+    padding: 15px 40px;
+  }
+  
+
+table th {
+    background-color: #fbc25b;
+    padding: 15px 30px;
+  }
+ 
+
