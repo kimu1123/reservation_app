@@ -2,17 +2,23 @@ ja:
   activerecord:
     models:
       reservation: 予約
+      room: 施設
     attributes:
       reservation:
-        check_in:チェックイン
-        check_out:チェックアウト
-        count_people:人数
+        check_in: チェックイン
+        check_out: チェックアウト
+        count_people: 人数
+      room: 
+        name: 名前
+        introduction: 施設詳細
+        price: 料金
+        address: 住所
     errors:
       models:
-        reservation:
-          check_in:チェックイン
-          check_out:チェックアウト
-         count_people:人数
+       reservation:
+        check_in: チェックイン
+        check_out: チェックアウト
+        count_people: 人数
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
@@ -125,7 +131,7 @@ ja:
       less_than: は%{count}より小さい値にしてください
       less_than_or_equal_to: は%{count}以下の値にしてください
       model_invalid: 'バリデーションに失敗しました: %{errors}'
-      not_a_number: は数値で入力してください
+      not_a_number: は正しい数値で入力してください
       not_an_integer: は整数で入力してください
       odd: は奇数にしてください
       other_than: は%{count}以外の値にしてください

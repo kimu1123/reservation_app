@@ -1,3 +1,205 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.FirstView{
+    background-image: url(https://tsunagutabi.com/wp-content/uploads/2020/04/%E6%97%85%E8%A1%8C%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AB%E3%81%8A%E3%81%99%E3%81%99%E3%82%81%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E7%94%BB%E5%83%8F%EF%BC%86%E7%B4%A0%E6%9D%90%E3%82%B5%E3%82%A4%E3%83%88%E3%81%BE%E3%81%A8%E3%82%81.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 130px;
+    padding-bottom: 250px;
+}
+
+input[type="search"] {
+    width: 350px;
+    height: 50px;
+}
+
+.RecommendAreas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-gap: 32px;
+    gap: 32px;
+}
+
+.RecommendArea--tokyo {
+    background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/tokyo.jpg);
+    background-size: cover;
+    background-position: 50%;
+    height: 455px;
+    width: 250px;
+    border-radius: 26px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+}
+
+.RecommendArea--osaka {
+    background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/osaka.jpg);
+    background-size: cover;
+    background-position: 50%;
+    height: 455px;
+    width: 250px;
+    border-radius: 26px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.RecommendArea--kyoto {
+    background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/kyoto.jpg);
+    background-size: cover;
+    background-position: 50%;
+    height: 455px;
+    width: 250px;
+    border-radius: 26px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+
+.RecommendArea--sapporo {
+    background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/sapporo.jpg);
+    background-size: cover;
+    background-position: 50%;
+    height: 455px;
+    width: 250px;
+    border-radius: 26px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+
+.RecommendArea__name--ja {
+    font-size: 28px;
+    line-height: 42px;
+}
+
+.RecommendArea__name {
+    color: #fff;
+}
+
+.RecommendArea__name--en {
+    font-family: Lato,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.RecommendArea__name--en>svg {
+    height: 20px;
+    margin-top: -4px;
+    margin-right: 5px;
+    width: 20px;
+    color: #fff;
+}
+
+.RecommendAreaSection {
+    margin-bottom: 260px;
+}
+
+.RecommendAreaSection__title {
+    border-bottom: 3px solid #ff7757;
+    font-size: 44px;
+    line-height: 66px;
+    margin-bottom: 140px;
+    padding-bottom: 15px;
+    width: -webkit-fit-content;
+}
+
+.navbar {
+    background-color:#C0C0C0;
+    
+}
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+    .Navbar__logo {
+        width: 300px;
+    }
+
+a {
+    color:#0000FF;
+    text-decoration: none;
+}
+
+.gnavi__lists {
+    list-style: none;
+    margin-right: 40px;
+    align-items: center!important;
+
+}
+  
+  
+  .gnavi__list>a {
+    color:#FFFFFF;
+    text-decoration: none;
+
+  }
+
+  .dropdown__lists {
+    list-style: none;
+    display: none;
+    width: 20%;
+    position: absolute;
+    right: 0; 
+ }
+
+  .gnavi__list:hover .dropdown__lists {
+    display: block;
+  }
+
+  .dropdown__list {
+    background-color: #fff;
+    height: 60px;
+    transition: all .3s;
+    position: relative;
+  }
+
+  .dropdown__list:not(:first-child)::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .dropdown__list:hover {
+    background-color: #90D7EC;
+  }
+
+  .dropdown__list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #212529;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .dropdown__list a::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(135deg);
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 5px);
+  }

@@ -1,8 +1,10 @@
-<h2>新規登録</h2>
-<%=alert %>
-<div class="form-container">
-<%= form_with model: @room do |f| %>
+<div class="main-container">
+    <section class="FormContainer">
+        <h2>施設登録</h2>
 
+    <%= render "shared/error", obj: @room %>
+
+    <%= form_with model: @room do |f| %>
     <div class="form">
     <%= f.label :name ,"施設名" %>
     <div class="form_btn">

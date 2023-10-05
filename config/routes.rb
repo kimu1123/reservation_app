@@ -8,13 +8,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
  
   
-   resources :users do
+  resources :users, only: [:index,:show,:update] do
    end
    root 'homes#index'
    get 'users/show'
    get 'users/edit'
-   resources :rooms do
-   end
+
+  resources :rooms do
+    member do
+      get 'own'
+    end
+  end
 
   resources :reservations do
     member do

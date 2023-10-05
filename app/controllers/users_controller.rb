@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
+ 
+  before_action :sign_in_required, only: [:show ,:own ,:update]
 
-  before_action :sign_in_required, only: [:show]
+  def index
+    @users = User.all
+    @rooms = Room.all
+  end
+
+
   def new
     @user = User.new
   end
@@ -8,6 +15,7 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user
+
   end
 
 
@@ -17,9 +25,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    
-  
-
     if current_user.update(params.require(:user).permit(:icon, :name,:profile))
       flash[:notice] = "ユーザーIDが「#{@user.id}」の情報を更新しました"
       redirect_to users_show_path

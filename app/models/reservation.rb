@@ -3,6 +3,8 @@ class Reservation < ApplicationRecord
   belongs_to :room
 
   validates :check_in,:check_out,:count_people, presence: true
+  validates :count_people, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+
   validate :start_finish_check
 
  

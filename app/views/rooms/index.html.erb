@@ -1,13 +1,41 @@
-<section class="container room-list-container">
-<h3>登録済み一覧</h3>
-  <div>
-    <table class="table align-middle">
-      <thead>
-        <tr>
-          <th>画像</th>
-          <th>施設名</th>
-          <th>紹介文</th>
-          <th>料金</th>
-          <th>作成日</th>
-         </tr>
-      </thead>
+<div class="SearchRoomsFormContainer">
+    <%= search_form_for(@q, html: {class:"SearchRoomsForm"} )do |f| %>
+        <div class="SearchRoomsForm__input-group SearchRoomsForm__input-group--area">
+            <%= f.search_field :address_cont , placeholder: 'エリア名' , class:"form-control SearchRoomsForm__input"%>
+        </div>
+
+        <div class="SearchRoomsForm__input-group SearchRoomsForm__input-group--keyword">
+            <%= f.search_field :introduction_or_name_cont , placeholder: 'キーワード名を入力' , class:"form-control SearchRoomsForm__input"%>
+        </div>
+
+        <%= f.submit:検索 ,class:"SearchRoomsForm__button" %>
+    <% end %>
+</div>
+<div class="container RoomsContainer">
+    <p class="RoomsContainer__result"><%= "#{@rooms.count}件が見つかりました。" %></p>
+
+    <ul class="RoomList ">
+        <% @rooms.each do |room| %>
+            <li class="Room">
+            <% if  room.image?%>
+            <%= image_tag room.image.url , class: "image", style: "width: 100px; height: 100px; object-fit:cover;"%>
+          <% else %>
+            <p><%= image_tag 'https://rails-02-sample.herokuapp.com/assets/room/default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png',class: "image", style: "width: 100px; height: 100px; object-fit:cover;" %></p>
+          <% end %>
+            
+            
+            <p class="Room__name"><%= room.name %></p>
+
+                    <p class="Room__address"><%= room.address %></p>
+
+                    <p class="Room__content"><%= room.introduction %></p>
+
+                    <div class="RoomFooter">
+                        <p class="Room__price">¥<%= room.price %>~</p>
+                        <%=link_to "詳細はこちら", room_path(room.id) ,class:"Room__link"%>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>
