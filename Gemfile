@@ -64,3 +64,12 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'ransack'
+
+gem 'sprockets', '~> 4.0'
+gem 'bootstrap', '~> 5.3.0.alpha3'
+gem "bootstrap4-datetime-picker-rails"
+gem 'momentjs-rails'
+gem "font-awesome-rails"
+gem 'jquery-rails'
+gem 'jquery-datetimepicker-rails'
+gem 'bootstrap-sass'

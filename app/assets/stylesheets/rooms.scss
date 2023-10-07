@@ -10,7 +10,9 @@
 
 .room_back{
     position:fixed;
-    top:60px;
+    top:200px;
+    left :10px;
+
 
 
 }
@@ -25,43 +27,74 @@ input[type="text"] {
     padding: 8px;
     border: none;
     border-radius: 4px;
-    background-color:#0000FF;
     color: #fff;
     font-weight: bold;
     border: 2px solid transparent;
-    cursor: pointer;
-   
+    cursor: pointer;  
 }
 
-.ReservationForm_btn{
+input[type="text"] {
+    width: 300px;
+    height: 40px;
 
+}
+
+input[type="number"] {
+    width: 300px;
+    height: 40px;
+
+}
+
+input[type="file"] {
+    width: 500px;
+    height: 40px;
+
+}
+
+.ReservationForm{
+position: relative;
+top:180px;
+
+}
+.ReservationForm__input{
+margin-top:50px;
+
+}
+
+
+
+.ReservationForm__input-container{
+margin-top:100px;
+
+}
+
+.ReservationForm__input-date{
+    margin-top:30px;
+
+
+
+}
+
+.ReservationForm__input--count_people{
+
+    position: relative;
+    left :650px;
+    bottom :400px;
+}
+
+
+.ReservationForm_btn{
+    background-color:#FF6600;
+    position: relative;
+    bottom:500px;
     width: 25%;
     padding: 8px;
     border: none;
     border-radius: 4px;
-    background-color:#0000FF;
     color: #fff;
     font-weight: bold;
     border: 2px solid transparent;
-    cursor: pointer;
-    position: relative;
-    bottom:300px;
-
-}
-
-.ReservationForm__input-container{
-    position: relative;
-
-}
-
-.ReservationForm__input{
-    margin-top:120px;
-}
-
-.ReservationForm__input-date{
-    margin-bottom:50px;
-    position: absolute;
- 
+    cursor: pointer;  
 }
 
 

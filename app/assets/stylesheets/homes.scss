@@ -15,6 +15,14 @@ input[type="search"] {
     height: 50px;
 }
 
+
+
+.btn FirstViewSearch__button{
+
+background-color: #0000FF;
+
+}
+
 .RecommendAreas {
     display: flex;
     flex-wrap: wrap;
@@ -111,95 +119,4 @@ input[type="search"] {
     width: -webkit-fit-content;
 }
 
-.navbar {
-    background-color:#C0C0C0;
-    
-}
-.navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    margin-top: 0.3rem;
-    padding-bottom: 0.3rem;
-}
-    .Navbar__logo {
-        width: 300px;
-    }
 
-a {
-    color:#0000FF;
-    text-decoration: none;
-}
-
-.gnavi__lists {
-    list-style: none;
-    margin-right: 40px;
-    align-items: center!important;
-
-}
-  
-  
-  .gnavi__list>a {
-    color:#FFFFFF;
-    text-decoration: none;
-
-  }
-
-  .dropdown__lists {
-    list-style: none;
-    display: none;
-    width: 20%;
-    position: absolute;
-    right: 0; 
- }
-
-  .gnavi__list:hover .dropdown__lists {
-    display: block;
-  }
-
-  .dropdown__list {
-    background-color: #fff;
-    height: 60px;
-    transition: all .3s;
-    position: relative;
-  }
-
-  .dropdown__list:not(:first-child)::before {
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .dropdown__list:hover {
-    background-color: #90D7EC;
-  }
-
-  .dropdown__list a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #212529;
-    text-decoration: none;
-    position: relative;
-  }
-
-  .dropdown__list a::before {
-    content: '';
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-top: 2px solid #fff;
-    border-left: 2px solid #fff;
-    transform: rotate(135deg);
-    position: absolute;
-    right: 15px;
-    top: calc(50% - 5px);
-  }

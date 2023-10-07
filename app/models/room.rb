@@ -2,10 +2,10 @@ class Room < ApplicationRecord
     belongs_to :user
     has_many :reservations, dependent: :destroy
 
-    validates :name,:introduction,:price,:address, presence: true
-    validates :price, numericality: true
-    validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 0}
-    
+    validates :name,:introduction,:address, presence: true
+    validates :price , numericality: { greater_than_or_equal_to: 1 }
+  
+
     mount_uploader :image, ImageUploader
   
 
@@ -17,5 +17,4 @@ class Room < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
       ["user"]
   end
-
 end

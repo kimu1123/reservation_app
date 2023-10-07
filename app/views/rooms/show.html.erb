@@ -36,15 +36,14 @@
         <%= f.date_field :check_in  %>
       </div>
   </div>    
-  <div class="ReservationForm__input-container">
       <div class="ReservationForm__input">
         <%= f.label :check_out,"チェックイン"  %>
       <div class="ReservationForm__input-date">
         <%= f.date_field :check_out%>
       </div>
   </div>      
-  <div class="ReservationForm__input-container">
-      <div class="ReservationForm__input">
+  <div class="ReservationForm__input-container--input--count_people">
+      <div class="ReservationForm__input--count_people">
         <%= f.label :count_people, "人数" %>
         <%= f.number_field :count_people, min:1, placeholder:"0"%>
       </div>
