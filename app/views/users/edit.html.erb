@@ -1,0 +1,47 @@
+<h2>設定</h2>
+
+<div class="AccountInformation">
+  <div class="AccountForm__header">
+    <h3>プロフィール</h3>
+  </div>
+  <%= render "shared/error", obj: @user %>
+
+  <%= form_with model: @user, local: true  do |f| %>
+  <div class="FileUploadArea AccountForm_input-group">
+    <%= f.label :プロフィール画像 ,class:"AccountForm__label"%><br/>
+      <p class="FileUploadArea__input-group">
+        <% if @user.icon? %>
+          <%= image_tag @user.icon.url, class: "icon", style: "border-radius: 30%; width: 50px; height: 50px; object-fit:cover;"%>
+        <% else %>
+          <%= image_tag "https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png", class: "icon", style: "border-radius: 30%; width: 50px; height: 50px; object-fit:cover;"  %>
+        <% end %>
+        <br>
+          <div class="icon-upload">
+            <%= f.file_field :icon %>
+          </div>
+       </p>
+   </div>
+
+  <div class="AccountForm_input-group">
+    <%= f.label :ユーザーネーム ,class:"AccountForm_label" %><br />
+      <div class="AccountForm_input-wrapper">
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" ,class:"AccountForm_input" ,placeholder:"名前を入力",  :size=> "104" %>
+      </div>
+  </div>
+         
+  <div class="AccountForm_input-group">
+    <%= f.label :自己紹介 ,class:"AccountForm_label" %><br />
+      <div class="AccountForm_input-wrapper">
+        <%= f.text_area :profile, autofocus: true, autocomplete: "profile" ,class:"AccountForm_input" ,placeholder:"自己紹介を入力", style: "width:50%", rows: "5" %>
+      </div>
+  </div>
+
+
+  <div>
+    <%= f.submit "編集を完了する", class:"btn_submit" %>
+  </div>
+  <div>
+     <%= link_to "キャンセル", :back ,class:"btn_back"%>
+  </div>
+  </div> 
+  <% end %>

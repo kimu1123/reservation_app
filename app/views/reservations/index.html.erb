@@ -1,0 +1,46 @@
+<h3>予約済み施設一覧</h3>
+<section class="section">
+  <table class="reservation_list">
+    <thead>
+        <tr>
+        <th scope="col">施設画像</th>
+        <th>施設名</th>
+        <th>施設紹介</th>
+        <th>合計金額</th>
+        <th>チェックイン日</th>
+        <th>チェックアウト日</th>
+        <th>予約確定日時</th>
+        <th>削除</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% if @reservations.count > 0 %> 
+    <% @reservations.each do |reservation| %>
+     <tr>
+       <td>
+        <div>
+      <% if reservation.room.image?%>
+        <p><%= image_tag reservation.room.image.url , class: "image", style: "width: 100px; height: 100px; object-fit:cover;"%></p>
+      <% else %>
+        <p><%= image_tag 'https://rails-02-sample.herokuapp.com/assets/room/default-image-4e0ac6b8d01335b5b22fe6586af13644ae51dddb6aeabf35b9174e80f13cd09d.png',class: "image", style: "width: 100px; height: 100px; object-fit:cover;"%></p>
+        <% end %>
+
+        <td><%=link_to reservation.room.name, room_path(reservation.room.id) %> </td>
+        <td><%= reservation.room.introduction %></td> 
+        <td>¥<%= reservation.total_price %></td>
+        <td><%= reservation.check_in.strftime("%Y/%m/%d") %></td>
+        <td><%= reservation.check_out.strftime("%Y/%m/%d") %></td>
+        <td><%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+        <td>
+        <%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+        </td>
+      </tr>
+    <% end %>
+      <% else %>
+      <td colspan="9">現在登録している施設はありません</td>
+    <% end %>
+      </tbody>
+    </table>
+  </section>
+  

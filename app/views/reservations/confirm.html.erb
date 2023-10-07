@@ -1,0 +1,48 @@
+<div class="FormWrapper">
+    <section class="FormContainer">
+        <h2>予約内容の確認</h2>
+
+        <%= form_with model:@reservation ,method: :post, html: {class:"Form ReservationConfirm"} do |f| %>
+            <%= f.hidden_field :user_id , value: @user_id%>
+            <%= f.hidden_field :room_id , value: @reservation.room_id%>
+            <%= f.hidden_field :check_in ,value: @reservation.check_in%>
+            <%= f.hidden_field :check_out ,value:  @reservation.check_out%>
+            <%= f.hidden_field :count_people ,value: @reservation.count_people%>
+
+
+            <tr>
+            <th>チェックイン</th>
+            <td class="is-right"><%= @reservation.check_in.strftime("%Y/%m/%d") %></td>
+            </tr>
+
+            <div class="ReservationConfirm>
+            <p>チェックアウト</p>
+            <p class="ReservationConfirm__label"><%= f.label :check_out, "チェックアウト" %></p>
+            <p class="ReservationConfirm__value"><%= @reservation.check_out.strftime("%Y/%m/%d") %></p>
+            </div>
+
+            <div class="ReservationConfirm>
+            <p class="ReservationConfirm__label"><%= f.label :days, "日数" %></p> 
+            <p class="ReservationConfirm__value"><%= @reservation.days %>日数</p> 
+           </div>
+
+           <div class="ReservationConfirm>
+           <p class="ReservationConfirm__label"><%= f.label :count_people, "人数" %></p>
+           <p class="ReservationConfirm__value"><%= @reservation.count_people %>人</p>
+           </div>
+
+           <div class="ReservationConfirm>
+           <p class="ReservationConfirm__label">お支払い金額</p>
+           <p class="ReservationConfirm__value ReservationConfirm__value--price">¥<%= @total_price %></p>
+          </div>
+
+          <div class= "submit is-fullwidth">
+            <%= f.submit:予約を確定 ,class:"btn ReservationConfirm__button ReservationConfirm__button--submit" %>
+          </div>
+          <div class= "back is_fullwidth">
+            <%=link_to 'キャンセル', :back, class: "button is-fullwidth" %>
+         </div>
+       <% end %>
+         
+
+          
